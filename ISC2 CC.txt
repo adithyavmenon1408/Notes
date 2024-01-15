@@ -1,0 +1,429 @@
+ISC2 Certified in Cybersecurity (CC)
+-----------------------------------------
+This document contains the important points useful for passing the Certified in Cybersecurity examination. 
+Please note that this is not an equivalent to the training from ISC2 and has been created only in the capacity of a quick reference guide.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+CIA Triad
+----------
+c- confidentiality
+   -- Permitting authorized access to information
+   -- protecting information from improper disclosure
+   
+I- Integrity
+   -- Ensures completness, accuracy, consistency and usefulness of information for a particular purpose
+   
+A- Avialability
+   -- Ensures that systems and data are accessible to the users when they need them.
+
+Authentication - process to prove the users identity
+		-- Something you know (Passwords or any memorised information)          -- Type 1
+		-- SOmething you have (Tokens, smart cards, Memory cards, cookies)      -- Type 2
+		-- Something you are (Biometrics)  					-- Type 3
+		-- Somewhere you are (location, ip, mac)                                -- Type 4
+		-- Something you do (signature or patternlock)                          -- Type 5
+		
+Non- Repudiation - protection against an individual falsely denying having performed an action
+
+Risk Management
+---------------
+Threat is some one or something that aims to expolit a vulnerability to gain unauthorised access
+Vulnerability is a gap or weakness in the protection efforts
+Asset is soemthing that needs protection
+Threat vector is the means by which a threat actor carries out their objective
+Risk assessment is the process of identifiying, estimating and prioritizing the risks based on their impact to the organisation, assets, individuals etc.
+
+Risk treatment is how we mitigate the risk by choosing the best possible actions. It has 4 parts
+
+-- Avoidence - aims to mitigate the risk completely. Happens when a potential impact of the risk or the liklihood of the risk is too high
+-- Acceptance - Taking no action to reduce the likelyhood of a risk. Usually  when the impact is negligible
+-- Transference - Practice of passing the financial impact of the risk to a third party (Insurence) in exchange of payment
+-- Mitigation - Take action to  reduce the possiblity  and impact of a risk
+
+risk associated with delaying resumption of full normal operations after a disaster is the impact of running alternate operations as alternate operations can be costly
+
+Security Controls
+------------------
+These are steps taken to prevent the confidentiality, integrity and availability of information systems and the data. They are of 3 types
+-- Physical - controls, directs or prevents the movement of people throghout the office (badge readers, doors, physical hardware)
+-- Technical - Implemented directly by computer systems or networks. They provide autometed protection from unauthorised access or misuse of data
+-- Administrative - directives, guidelines and advisories aimed at the people within the organisation. provides frameworks constraints and standards fro human behaviour
+				    They also cover the organisations interation with the stakeholders and other third parties.
+
+GOvernance Elements
+--------------------
+
+Procedure - detailed steps to complete tasks that support organisational policies
+Policies - provide guidence in all activities to ensure that the organisation adheres to industry standards and regulations. Highest level governance document in an organisation
+Standards - provide a framework to introduce policies and procedures that support regulations
+Regulations - Laws implemented by the government
+
+regulstions (Laws) >> standards >> policies >> procedures
+
+Incident Terminologies
+------------------------
+Breach -- loss of control or unauthorise access of PII by an unauthorised person aor by an authorised person for unauthorised purposes
+Event -- any observable occurence in a network or systems
+Exploit -- A particular attack that take advantage of system or network vulnerabilities
+Incident -- any event that compromises the C, I or A of information or information systems.
+Intrusion -- A security event or a combination of events in which an attacker gains or attempts to gain access to a system or its resources without authorisation
+Threat -- An event with the capability to disrupt the organisational operations through the unauthorised access of an information system resulting in destruction or denial of services
+Vulnerability -- A weekness in an information system or its security that can be expolited by a threat actor
+Zero day -- a previously unknown systen vulnerability that does not fit into the general pattern and cannot be detected or prevented.
+
+Components of INcident Response
+-------------------------------
+	Preparation 
+	------------
+	-- Develope an incident resposne policy approved by the management
+	-- Identify the critical data systems and single points of failure
+	-- Train staff on incident response
+	-- Implement an incident response team
+	-- Practice incident identification(first response)
+	-- Indentify roles and responsibilities
+	-- Plan coordination and communication between stakeholders assuming thet primary method of communication might not be available
+
+	Detection and analysis
+	------------------------
+	-- Monitor all known attack vectors
+	-- Analyse the incident using known data and threat intelligence
+	-- prioritize incident response
+	-- Standardize incident documentation
+
+	Containment
+	-------------
+	-- Gather evidence
+	-- Choose an appropriate containment strategy
+	-- Identify the attacker
+	-- Isolate the attack
+
+	Post incident activity
+	------------------------
+	-- Identify the eveidentc that needs to be retained
+	-- Document the lessons learned
+
+Responsibilities of incident response teams
+-------------------------------------------
+-- Determine the scope of the damage
+-- Determine whether any confidential information was comrpomised
+-- Implement andy necessary recovery procedures to recover from the incident
+-- Supervise the implementaion of any additional security measures to prevent  any further incidents
+
+Business Continuity Plan
+-------------------------
+-- Sustain business operations while recovering from an attack. Activated when the senior management authorises it
+-- BCP is a proactive preparation to restore operations after disruptions
+-- Business Impact Analysis (BIA) is conducted to assess the criticality of an organisation's processes and functions inn case of an attack or a disruption.
+
+A BCP should have
+	-- List of team members including multiple contact methods and backup members
+	-- Immediate response procedures and checklists
+	-- Notification systems and call trees to alert the members that a BCP has been enacted
+	-- Guidence for the management (who does what)
+	-- How and when to enact the BCP
+	-- Contact numbers of critical thiord party vendors.
+	
+Most important aspect of business continuity effort is to protect health and human saftey.
+
+Disater Recovery
+-------------------
+-- Picks uop where Business continuity left off
+-- Restoring IT and communication services back to full operation during the period of disruption ad  during restoration to normal oprerations
+
+A disaster recovery plan includes
+	-- Executive summary providing a high-level overview of the plan
+	-- Department-specific plans
+	-- Technical guides for IT personnel responsible for implementing and maintaining critical backup systems
+	-- Full copies of the plan for critical disaster recovery team members
+	-- Checklists for certain individuals:
+
+Access Control Concepts
+--------------------------
+Subject -- is an entity that requests access to the assets (User, client, process or program). Subjects should have appropriate level of clearence
+Object - anything that the subject attempts to access is an object. It provides a service to the subject
+Rule -- This is a condition developed to allow or deny access to  an object based on the request from a subject by comparing the validated identity of the subject with the access 
+		control list
+Defense in depth -- this is an information security strategy that combines people, technology and operations capabilities to create variable levels of protection to an organisation 
+					and its assets. Multiple countermeasures are applied in a layered fashion to achieve the desired level of security
+Principle of least privilage - concept of providing minimum access to subjects to complete their functions
+collusion -- 2 individuals willfully work together to bypass the segregation of duties inorder to commit fraud.
+--Regular user accounts
+--Privilaged user accounts
+
+Privilaged access management -- providing special access to a subject to perform a particular task for a particular period of time.
+	*** data entry professional sdo not require privilaged access 
+
+Physical access controls
+--------------------------
+These are items that we can touch. They protect the physical assets as well as the health and safety of the personnel.
+CPTED - crime prevention through environmental design is a passive method that aims to prevent crime through a combination of organisational, technical and architectural design
+			-- directs the flow of people
+			-- provides passive instructions to signal who should and should not be in a space
+			-- provides visibility to low visibility areas thereby reducing the chances of a crime happening there
+Badge systems - magnetic strips, proximity cards etc
+Biometrics -- Physiological (fingerprint, retina scan, venous scan)
+		   -- Behavioural (voice recognition, keystroke dunamics)
+		   
+		   
+Logical Access control
+------------------------
+This determines who can have access to  a device or a system
+
+		   
+Discretionary Access Control (DAC) -- In this type of access control the subject who has access to  an object can
+	-- share the object with others
+	-- share object's privilages with others
+	-- change the security attributes on subjects, objects, systems and system components
+	-- choose the security attributes to be associated with new users or revised users
+	-- change rules governing access control.
+Security of the object is up to the owner
+
+Mandatory Access Control (MAC) -- this is an access control policy that is uniformly enacted accross all subjects and objects within the boundary of the information
+								  system
+THe security rules can only be modified by trusted users such as security admins.Using MAC the organisation can ensure that no subject  has full access to any of the 
+objects and cannot do the following
+	-- share the object with others
+	-- share object's privilages with others
+	-- change the security attributes on subjects, objects, systems and system components
+	-- choose the security attributes to be associated with new users or revised users
+	-- change rules governing access control.
+Access rights are assigned only by the security amins and not the owners of the object.
+
+Role Based Access Control (RBAC) -- In this the admin assigns privilages to the users based on their roles. Any change n the role of the user or if the user leaves the
+company the admin removes the user from the role thereby removing his permissions to the object or information system.	
+
+Context Based Access Control -- providing access to a user for a specific system resource based on parameters like time, location, access history or sequence of response.
+
+Computer Networking
+----------------------
+A network id 2 or more computers linked to share data information or resources. there are 2 different types of networks
+	-- Local Area NEtwork (LAN) -- spans over a floor or a building
+	-- Wide Area Network (WAN) -- Spans over various remote geographical locations
+	
+Network Layers
+----------------
+Application layer 
+	-- manages integrity of a connection
+	-- controls the session
+	-- establich maintain and terminate communication session between 2 computers
+	-- determines whether a remote communication partner is available
+	-- transforms data into a format that any system can understand
+TRansport layer
+	-- receives bits from the physical medium
+	-- converts the bits into frames of standard sizes
+	-- adds destination address to the frame to turn it into packets
+
+TCP/IP was designed for ease f use and is relatively easy to 
+
+Loopback address (127.0.0.1) provides a mechanism of self diagnosis and trouble shooting at machine level
+
+Types of attacks
+--------------------
+spoofing -- attack using falsified identity. used against ip addresses, mac addresses, system names, network names(ssid), usernames, email addresses etc.
+phishing -- misdirecting legitimate users to malicious websites or links
+DOS -- attack that prevents the legitimate activities on a system
+DDOS -- DOS attacks involving secondary systems victim systems
+Virus -- self replicating and propagating piece of code that spreads without the consent of the user. starts when a user clicks on an unknown link.
+WOrm -- self propagaing piece of code with the intent to destroy data. doesnt require human intervention to begin
+Trojan -- attack involving applications that appear legitimate but carry malicious code behind the scene and can destroy the system. ransomewares often uses trojans
+On-Path or Man in the Middle -- attacker places themselves between a web browser and server and messes with the packets to and from the systems.
+Side channel -- passive attack that is ued to monitor a system to gain useful information.
+Advanced Persistence Treat(APT) -- attacks that are highly technical and sophisticated and can last a losng time. Usually conducted by an organised group of attackers.
+									(Solar winds attack)
+insider threat -- attacks that happen because of users trusted by the organisation. espionage, disgruntled employees or innocent users who fall prey to
+				  phishing or any other attack
+Malware -- any program covertly inserted into the system to compromise the CIA triad of the victims data, applications or OS. Intended for disrupting the normal working
+Ransomeware -- malware used to highjack data, applications or the network to elicit ransom from the organisation. Encryption of files is commonly used in this type of attack
+
+System Information and Event Management (SIEM) -- gathers log data from all across the system to to  analyse and identify vulnerabilities and breaches.
+
+INtrusion Detection systems (IDS)
+-----------------------------------
+These detect threats before they can reach the system. They monitor the systems and the network to identify any malicious activity. They do not  replace firewalls but can complement
+and work with  any other security measures. they are of 2 types
+	-- Host based intrusion detection systems(HIDS) -- monitors individual hosts
+	-- Network based intrusion detection systems (NIDS) -- monitors the entire network
+	
+Steps to prevent threats
+--------------------------
+Keep the applications and softwares up to date
+use IDS and IPS 
+Use firewalls
+Use updated antimalware programs
+Remove unwanted services, protocols and close unused ports
+
+Intrusion Prevention system (IPS)
+--------------------------------
+This is a special type of IDS that automatically attempts to detect  and block an attack before it can reach a system. IPS is placed in line with the traffic meaning that all 
+traffic muct pass through it  and it decides which to allow and not allow. Just like IDS, IPS is also of 2 types host bases(HIPS) and Network based (NIPS)
+
+	***INbound ICMP traffic is denied at the firewall
+	***INternal traffic is not routed through the firewall. If an internal traffic comes through the firewall then it could be a spoofing attack
+	***Modern firewalls can identify  and prevent attacks
+
+Understanding Network Security Infrastructure
+-------------------------------------------------
+cooling and fire su[pression are essential for the protection of data center equipments
+data centers use a dry pipe system for a water based fire supression where an outside valve is opened automatically to let the water in when a fire is detected
+water based fire supression system can harm electronic equipments hence a gas or aerosol based system is much more preferable
+
+Redundancy - ensuring that there is a back up system that activates without or with minimal overhead in case the promary system fails
+			 there should be redundant back up of data and a redundant source of power.
+
+Cloud
+---------
+cloud computing is a method by which the computing resource provisioned in any geographical location by a cloud service provider is made available to use 
+by the consumers based on demand via electrical means. the consumers pay for only what they use.
+to ensure redundancy CSP provide availability zones. the user can choose mutiple AZ and host their data in them so as to ensure business continuity
+	-- pay per use
+	-- reduced infrastructre cost
+	-- allows scaling uop or down of services/ solutions based on an organisations needs
+CLoud service models
+---------------------
+Software as a service -- software services provided by vendors or the CSP themselves. Consumers can have access to the software for a price and with access credentials
+Platform as a service -- provides a platform that the consumers can use to develope and deploy new or existing software by renting virtual machines.
+Infrastructure as a service -- provides basic computing resources to consumers (servers, storage and networking resources). Hardware is owned and hosted by the CSP
+							   but the software is owned and maintained by the consumers themselves.
+
+CLoud Deployment Models
+--------------------------
+Public -- available to the public. easy to  access by renting the services and paying for it. part of a larger shared resource pool
+Private -- built specifically  for a single organisation. not accessible to anyone else
+Hybrid -- combination of public and private clouds where in the services of the public cloud is utilised to fulfill non mission critical functions
+Community -- like public or private cloud but  developed for a particular community.
+
+Network Design
+--------------------
+
+Network Segmentation -- Involves controlling the flow of traffic between networked devices. complete network segmentation coours when a network is isolated from any
+						outside communication and the flow of traffic occurs only between the devices in that network
+DMZ -- this is a network area designed to  be accessed by outside visitors but is isolated from the internal private network of the organization. This hosts the file and resource
+		servers accessible to the public. with a DMZ the host systems that are accessible through the fire wall are physicall seperated using switches or another fire wall from
+		the internal network
+VLAN -- Vlans are created using switches to segment networks without changing the physical topology. can be configured to allow or deny access to other vlans
+VPN -- this is a communication tunnel that provides point to point transfer of authentication and data traffic over an untrusted network.
+Defense in Depth -- this is a technique that utilises multiple layers to security to prevent access breach.
+NAC -- this controls the access to  an environment using strict security protocols that are always followed. they do not  create the policies they only enforce them. any
+device that wishes to connect to the internal network must pass through NAC and satisfy all the security policies.
+
+Zero trust networks are microsegmented networks with firewalls and other security measures at every end point and system. this forces the users to re authenticate themselves
+over and over again and increases the number of chances to detect  and prevent  an attack. This has defenses ste up at the user, asset and data levels. It insists that every
+process or action the user takes must be authenticated and authorized.
+
+Microsegmentation involves applying extremely granular restrictions to the network and the end points as well as users. these rules and restrictions can be as detailed and
+complex as desired. These are logical rules and not physical rules. hence they do not require additional hardware or manual interation with the device. Creating security
+groups in cloud is one way we can achieve microsegmentation. VPNs can also be used for the same purpose.
+
+*** switches connect segments of a network
+*** router connects networks 
+
+Data Handling
+----------------
+Create -- Creating the tacit knowledge
+Store -- Storing or recording the created knowledge
+Use -- Using the stored knowledge, this can cause it to  be modified or partially deleted or supplemented with extra information
+Share -- Sharing the data with others as a copy or from one location to another
+Archive -- Storing the data when it is temporarily not required
+Destroy -- Deleting the information or data when it is no longer needed or usable.
+
+Data Handling Practices
+---------------------------
+CLassification -- this is the process of determining what impact the compromise of data can have on an organisation, whetehr it  affect the CIA triad of the organisation
+				  This leads to much better design and implementation of security process that can applied to all the data under a similar classification. once calssified
+				  data can be labelled and handled.
+
+Labelling -- this is a method of assigning security levels to different data based on sensutivity. Higher the security label the more impact a compromise of such  data can have 
+			 on the organisation. someof the security levels are
+				 -- Highly restricted -- can affect the existance of the organisation
+				 -- Moderately restricted -- can cause loss of revenue and competitive advantage
+				 -- low sensitivity -- can cause minor disruptions and delays
+				 -- Unrestricted -- Publicly available data that can cause no harm at all.
+				 
+Retention -- determining how long the data should be stored. when there are no external rules governing data retention, its an organisations duty to  design and implementaion
+			 data retention piolicies and ensure that the data is properly destroyed once its reached its end of life.
+			 *** Data remanance is the data letf behind on the data storage media after normal deletion procedures have been completed.
+
+Destruction -- data that is no longer used should be destroyed. use steps such a wipring the storege media, degaussing and destroying the physical device that stores the data 
+			   such that it cvannot be recoverd by  any means.
+			   
+Logging is the process of keeping track of any event that occours within the system environment. It can track important information such as userids, important event dates,
+system activities, device location and identity, resource access attempts, any changes to system config and system protection activation and deactivation events. These logs
+when reviewd can help us identify faults, fraudulent activities, system vulnerabilities etc. Security controls on log data should reflect the sensitivity of the source
+
+Cryptography
+----------------------------
+An encryption system is a collection of hardware, software algorithms, control parameters and operational methods that provide a means of encrypting plain text to ciphertext
+cryptanalysis is the process of finding weaknesses in cryptographic algorithms and using these weeknesses to crack the encryption.
+
+Symmetric encryption -- uses the same key in both encryption and decryption algorithms. this has the following disadvantages
+	-- both sender and reciever has to share the key. if the communication path has been comrpomised any third party in the middle can have access to the key.
+	-- the key needs to  be unique for each particular pair of sender and reciever. this causes scalability issue
+
+Asymmetric encryption uses different keys for encryption and decryption. The key is generated using the public Key infrastructre and has 2 parts. Private key  and public key
+in order to encrypt  a message the sender only needs to know the public key of the receiever. ONly the receiever can decrypt it using the private key that he possesses. this 
+reduces scalability issue as only 2 keys are required per person and also allows us to send encrypted info over untrusted channels
+	-- this is however slower as it uses larger keys and is mathematically intensive. hence not suitable for daily use where speed is important.
+	-- Provides proof of origin of the message for multiple recepients
+
+Hashing -- this is the process which takes an input ste of data and returns a fixed length result called hash value. A hash function is an algorithm used to perform this function
+IN order to be useful a hash function has to  satisfy the following conditions 
+	-- useful -- easy to compute the cryptographic hash value of a message
+	-- non reversible -- it is computationally impossible to derive the orginal message from the hash value
+	-- Content Integrity  Assurence -- it is computationally impossible to  regenerate the same hash after modifiying the message.
+	-- Unique -- no 2 messages can have the same hash value
+	-- deterministic -- the input messgae will always have the same hash value when the same hash function is used.
+A hash value is an alpha-numeric set of figures
+
+Configuration Management
+--------------------------
+This is a process used to ensure that only those changes that are authorised and validated happen  to  a system. It is both a decision making process and a set of control process
+It has the following components
+	Identification -- this is the baseline identification of the system, all its components and interfaces and documentation.
+	Baseline -- this is a minimum acceptable level of protection. all updates and patches should be above or of this level.
+	Change control -- this is the process of requesting changes to the baseline by uodating its components. the changes are subject to review audit and approval
+	Verification and Audit -- this a validation process to ensure that nothing in the system was broken due to the changes performed. Audit ensures that the current baseline is
+	equal to the previous base line plus the new changes.
+				  
+Steps in configuration management
+
+Inventory -- take stock of all the assets that the organisation owns. 
+baseline -- total inventory of all the system components, hardware, software, data, administrative controls, documentation and user manuals.
+Updates -- maintanance actions. these must be tested to  ensure that nothing else is broken due to the changes made.
+Patches -- upgrades to the software or hardware components to mitigate a vulnerability. Patch needs to be tested before roll out.
+
+*** common attack on data in use is shoulder surfing
+*** Data extraction is turning unstructured or semi structured data into structured data
+*** Public Key Infrastructure comprises of everything used to establish and manage public key encryption. this includes the hardware, software, policies and procedures
+    used to create, distribute, store and manage digital certificates. Data in motion is the most suitable to be encrypted using this.
+*** Security Audit evaluates the effectiveness of security controls and measures.
+*** Best approach to sanitize an SSD is to disintegrate it to avoid issues caused by data remanance.
+*** zero fill is the process of filling the storage device with zeros.
+*** Degaussing uses magnets to wipe magnetic media.
+
+*** Block cipher algorithm operates on a fixed length block of data and generates a ranndom output of the same size.
+*** Stream cipher algorithm applies a key and an algorith to each binary digit in a data stream one bit at a time.
+*** Firewall, Pentesting, antivirus -- Preventive control
+*** Antivirus -- corrective control 
+*** Audit logs, inventories, reconciliation -- detective
+*** Least Privilage states that the subjects should have only those permissions required to complete their tasks.
+*** Overall objective of DR is to return to normal full oprations.
+*** Hashing provides integrity checks
+
+POrts
+------------
+80 -- HTTP
+443 -- HTTPS
+20 -- FTP data transfer
+21 -- FTP control
+22 -- ssh
+23 -- telnet
+25 -- SMTP
+109 -- POP V2
+110 -- POP V3
+123 -- NTP
+587 -- Secure SMTP
+115 -- SFTP 
+67 -- DHCP server
+68 -- DHCP client

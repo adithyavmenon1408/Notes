@@ -1,0 +1,219 @@
+Ethernet - NIC to NIC on the same network
+IP - Source to Destination - Delivery of packets
+TCP - Reliable deluvery of p[ackets - Reorders packest if necessary
+HTTP - Governs transfer of HTML
+
+TCP/IP MOdel
+--------------
+Application		-- HTTP Protocol
+Transport		-- TCP Protocol
+Network         -- IP Protocol 
+Physical		-- Ethernet Protocol
+
+OSI MOdel
+----------
+Application		--L7 -- COmmunciation between various processes.
+Presentation	--L6 -- Provides common representation of data transferred between application layer services
+Session			--L5 -- Provides services to the presentation layer organize its dialoge and manage data exchange
+Transport		--L4 -- defines services to segment transfer and reassemble data	
+Network			--L3 -- Provides services to exchange individual pieces of data over a network
+Datalink		--L2 -- Defines the methods for exchanges data frames between devices over a common media
+Physical		--L1 -- defines the physical requirements to keep a connection active (physical devices and connection media)
+
+Heirarchical Network Design
+---------------------------
+Access Layer -- Contains devices that connect to the end user
+Distribution Layer - Interconnects the smaller local networks
+Core layer - Provides high speed connection between distribution layer devices
+
+dividing a network limits the amount the broadcast traffic. A network can be divided based on 
+-->security requirements
+-->logical grouping
+-->Physical locations
+
+DHCP - Dynamic host configuration protocol.
+--> IN home networks modem acts as both  DHCP client and router. It receives the public IP address
+	from the ISP and acts as a DHCP server for the inetrnal hosts by distributing private IPs
+	
+--> In DHCPv6 there is no default gateway address. This is obtained from the router advertisment msg of the
+	router
+
+DHCP operation
+
+--> Host sends out a DHCP discover packet (broadcast packet). Contains the MAC adddr of the device
+	requesting the dhcp 
+--> DHCP server responds with a DHCP offer. contains an IP addr, subnet mask and default gateway address that the requesting host can use 
+	if it accepts it.
+--> Host sends a DHCP request (broadcast message) packet to the DHCP server to request for the IP address the server had offerred
+--> DHCP server sends back an acknowledgment packet indicating to that host that it has assigned the requested IP
+	to the MAC address of the requesting host.
+
+Private IPv4 addresses have the following class configurations:
+
+-->	Class A IP addresses. Configurations range from 10.0.0.0 to 10.255.255.255. 
+	This class is for large networks and has 8 bits for the network and 24 bits for hosts.
+
+--> Class B IP addresses. Configurations range from 172.16.0.0 to 172.31.255.255. 
+	This class is for medium networks and has 16 bits for the network and 16 bits for hosts.
+
+--> Class C IP addresses. Configurations range from 192.168.0.0 to 192.168.255.255. 
+	This class is for smaller networks and has 24 bits for the network and 8 bits for hosts.
+	
+Network address translation  NAT
+
+--> Router keeps a table in which the Private IP address is mapped to a public ip address
+--> Router substitutes the private IP with the public IP address when the host wants to communicate with the remote network
+--> Data from the remote network comes back to the public IP address. The router then convertst the IP
+	back to the private IP before sending the packet to the requesting host
+	
+Need for IPv6
+
+--> increasing internet population
+--> decreasing IPv4 address space
+--> issues with NAT
+--> IOT
+
+IPv6 has an address size of 340 undecillion = 340 * 10^36
+Ipv6 is represented as ': separated hexa decimal form' = [0 1 2 3 4 5 6 7 8 9 A B C D E F]
+IPv6 is a 128 bit address (consists of 128 1s and 0s) while IPv4 is only 32 bit (contains 32 1s & 0s)
+IPv6 consists of 8 hextets (8 groups of 16 bits)
+IPv6 has network prefix instead of subnet mask. This network prefix tells us how to id the network
+	with a network prefix of 64, itb means that the first 64 bits are the network protion of the IPv6 address
+Contiguous zeroes can be replaced with a double colon in IPv6, but this can be used only once in an address
+
+IPv6 Migration Techniques
+
+--> Dual Stack = allows IPv4 and IPv6 to exist simulateously. Devices run both IPv4 and IPv6 protocol stacks
+				 simultaneously. Known as native IPv6, this means the customer network has an IPv6 connection to its ISP 
+				 and is able to access content found on the internet over IPv6.
+
+--> Tunnelling = This is a method of transporting an IPv6 packet over an IPv4 network. The IPv6 packet is encapsulated inside an IPv4 packet, 
+				 similar to other types of data.
+				 
+--> TRanslation = This uses the NAT64 protocol to allow an IPv6 only network to communicate with the IPv4 Network
+				  An IPv6 packet is translated to an IPv4 packet and an IPv4 packet is translated to an IPv6 packet.
+				  
+IPv6 makes use of link local unicast address (usually begins with FE80). This is an address that can only  be used on a particular network.
+It is not routed by the router. other networks cannot see this address.
+
+ICMP - Internet Control Message Protocol
+
+Inorder for a host on an ipv6 network to get a global unicast IPv6 address it first sends  the router solicitation (multicast) packet using the ICMPv6 protocol.
+Any IPv6 routers on the network that receives the router solicitation responds with a router advertisment (multicast) packet that contains the addressing information that 
+the host uses to create its own global unicast address. Router advertisment has 3 options
+
+--> SLAAC - stateless address auto configuration = using this the host can create its own address. DHCPv6 is not used
+--> SLAAC + Stateless DHCPv6 for DNS addresses = addressing  info for creating the global unicast address comes from SLAAC but the DNS address comes from stateless DHCPv6 server
+--> DHCPv6 (stateful) = gives all addressing information except default gateway address. In IPv6 instead of default gateway link local address is used and this is provided by the 
+	router.
+	
+2001:0db8:1:acad::fe55:6789:b210 -- Global Unique address
+
+::1								 -- Loopback IPv6 address
+
+fc00:22:a:2::cd4:23e4:76fa		 -- Unique local address
+
+2033:db8:1:1:22:a33d:259a:21fe	 -- Global Unique address
+
+fe80::3201:cc01:65b1			 -- Link Local Address
+
+ff00::							 -- Multicast address
+
+ff00::db7:4322:a231:67c			 -- Multicast address
+
+ff02::2							 -- Multicast address
+
+A socket is one end point of a 2 way communication between 2 programs running on a network. and end point is a combination of IP address and port number
+Client  and server will have their own sockets
+
+UDP -- Primarily used with real time applications like streaming. loss of a few packets along the way is not  of much concern. This is less reliable. Each segment has a source and 
+	   destination port number but  no sequence number or acknowledgement of receipt of the packet.
+	   
+TCP -- Primarily used when loss of packets can cause catastrophic side effects. This is  more reliable than UDP. This ensures that only  very limited number of packets are dropped
+	   and if any packet is dropped by chance, it is picked up and retransmitted. In TCP each  segment has a sequence number in addition to source and destination port number.
+	   Sequence number helps to ensure that each segment has reached safely and any  missing segment is identified by the sequence number and then retransmitted. In this
+	   the client and ther server are in conatant communication and each time a segement is received an acknowledgement is sent. this causes some overhead. The sequence number allow
+	   the client to put the packets back in its original order
+
+Depending on the critical nature of the information being sent, an appropriate protocol is chosen from TCP or UDP
+
+HTTP - 80
+HTTPS - 443
+DNS -53
+TELNET -23
+SMTP - 25
+POP3 - 110
+IMAP - 143
+DHCP - 67 (server)
+DHCP - 68 (client) 
+TFTP - 69
+
+SMTP - used to send email  to the local mail swrver which then decides whether to  forwrd the mail to another email server on the same domain or not
+POP - used to receive emails. emails are downloded on to the users system once he connects using the pop client
+IMAP -used to receive emails. emails are stored on the mail server for future use by the users and a copy is downloaded on to the users system
+
+An FTP client is an application that runs on a computer used to push and pull files from a server running an FTP daemon. To transfer files, FTP requires two connections 
+between the client and the server: one for commands and replies and another for the actual file transfer. The client establishes the first connection to the server for 
+control traffic and the second connection for the actual file transfer. 
+
+
+
+
+
+Port forwarding - this is a way of making the router use a specific port to communicate with certain devices. this way the traffic does not have access to the other devices
+				  on the network.
+
+CISCO DEVICES
+				  
+Out of band configuration of a switch requires it to  be directly connected to a computer through a rollover cable. This will allow access to the device without haveing any network
+connection.
+Inband management involves remotely accessing the network device. This requires a network connection. Either Telnet, HTTP or SSH can be used to access a Cisco device for in-band 
+management, monitor the network device, or make configuration changes.
+
+When a cisco device boots up the IOS IMAGE FILE and the STARTUP CONFIguration FILE are loaded on to the RAM
+IOS IMGAFE FILE is stored in the flash memory and it facilitates the operation of the devices hardware.
+--> Flash memory is not the same as RAM. IT retains the data even when the power is off. but it's just as fast as RAM
+The start up configuration file is stored in the NVRAM (Non Volatile RAM ). All config changes are stored in the running file and implemented immediately by the IOS.
+
+Routers are essentially computers and have the folowing components
+--> OS
+--> RAM
+--> ROM
+--> CPU
+--> NVRAM
+
+Steps to boot a router involves (POST --> load Bootstrap --> LOad IOS --> LOad Configuration file)
+--> Mount the router on a rack
+--> Ground the router
+--> Connect the power cable
+--> connect the console cable (rollover cable)
+--> Switch on the router
+--> Observe the startup messages on the terminal
+
+Copy of a limited IOS for trouble shooting is stored in ROM
+
+There are 2 primamry CLI access modes for any cisco device.
+1) User Exec Mode - In this the capabilities are limkited. Only basic monitoring operations can be performed. It does not allow the execution of any command that can change the
+					confoguration of the device. CLI prompt ends with '>' symbol
+2) Privilaged Exec Mode - In this all advanced operations including monitoring and configuration changes are permitted. CLI prompt ends with '#' symbol
+						  Higher configuration modes like the global config mode can be reached from here.
+--> Enable command allows to switch from user exec to privilage exec modes.
+--> configure terminal command allows to  enter the global config mode
+--> disable brings back to user exec mode
+--> ? is helps
+--> Ctrl+z / end brings us back ro privilaged exec mode
+--> line console 0 -- user exec mode
+--> line vty 0 15 -- ssh/telnet access
+--> interface vlan 1 -- configure management svi
+--> ip address 192.168.10.10 255.255.255.0
+--> transport input ssh telnet -- enables telnet and ssh access
+
+
+
+
+ 
+
+	
+	
+
+
